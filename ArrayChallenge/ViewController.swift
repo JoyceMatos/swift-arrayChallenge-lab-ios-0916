@@ -22,18 +22,16 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        makeShoppingListWithItems(nameOfItems, quantityOfItems: quantityOfItems)
-        
+                
     }
     
     
-    func makeShoppingListWithItems(nameOfItems: [String], quantityOfItems: [Int]) -> String {
-        for quantity in quantityOfItems.enumerate() {
-            shoppingList.append("\(quantity)")
+    func makeShoppingListWithItems(food: [String], quantityOfItems: [Int]) -> [String] {
+        for (index, item) in food.enumerate() {
+            shoppingList.append("\(index+1). \(quantityOfItems[index]) \(item)")
         }
-        for item in nameOfItems.enumerate() {
-            shoppingList.append("\(item)") }
-        return ("\(shoppingList)")
+        return(shoppingList)
     }
-
+    
+    
 }
